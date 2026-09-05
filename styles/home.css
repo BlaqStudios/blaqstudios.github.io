@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Blaq Studios — Homepage-only styles
+   ========================================================================== */
+
+.ambient-glow {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1200px;
+    height: 380px;
+    background: radial-gradient(circle at 50% 0%, rgba(91, 155, 217, 0.12) 0%, rgba(13, 25, 38, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.showcase {
+    padding: 10px 0 50px;
+}
+
+.games-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pillars {
+    padding: 20px 0 60px;
+}

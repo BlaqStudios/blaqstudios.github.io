@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Blaq Studios — Shikaku game page styles
+   ========================================================================== */
+
+.game-hero {
+    padding-bottom: 20px;
+}
+
+.stat-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.stat-strip .dot {
+    color: var(--border-highlight);
+}
+
+section {
+    padding: 50px 0;
+}
+
+section + section {
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* ---------- How to Play (editorial split, no card chrome) ---------- */
+.split-section {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.split-section .copy h3 {
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+}
+
+.split-section .copy p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.rule-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.rule-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+}
+
+.rule-list .num {
+    font-family: var(--mono);
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* ---------- Two Ways to Play ---------- */
+.mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.mode-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mode-card .mode-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.mode-card .puzzle-box {
+    max-width: 180px;
+}
+
+.mode-card h4 {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.mode-card p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+.mode-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Mastery (icon-led list, distinct rhythm from cards) ---------- */
+.mastery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 640px;
+    margin: 0 auto 28px;
+}
+
+.mastery-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.mastery-star {
+    font-family: var(--mono);
+    color: var(--accent-amber);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+    width: 24px;
+}
+
+.mastery-item h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.mastery-item p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.crown-note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ---------- Theme swatches ---------- */
+.swatch-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.swatch-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.swatch-card h5 {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.swatch-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.swatch-chip {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Fair to Players callout ---------- */
+.callout {
+    max-width: 620px;
+    margin: 0 auto;
+    border-left: 3px solid var(--accent-blue);
+    padding-left: 22px;
+    text-align: left;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* ---------- Closing CTA ---------- */
+.cta-banner {
+    text-align: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 44px 24px;
+}
+
+.cta-banner h3 {
+    font-family: var(--mono);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+    .split-section .game-visual {
+        order: -1;
+        margin-bottom: 12px;
+    }
+}

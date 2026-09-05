@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shikaku — Divide by Box: a spatial logic puzzle for Android with 1,000 levels, two game modes, and 19 languages.">
+    <title>Shikaku — Divide by Box | Blaq Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/shikaku.css">
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+            <div class="nav-inner">
+                <a href="../index.html" class="brand">
+                    <div class="brand-logo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b9bd9" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    <span class="brand-name">Blaq Studios</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#games" class="active">Games</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrapper">
+
+        <section class="hero game-hero hero-animate">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span>Available Now on Google Play</span>
+            </div>
+            <h1>Shikaku — Divide by Box</h1>
+            <p>A spatial logic puzzle where every number tells you exactly how big its box should be. Fill the grid completely, get every box right, and the puzzle falls into place.</p>
+
+            <div class="cta-actions" style="margin-bottom: 24px;">
+                <a href="https://play.google.com/store/apps/details?id=com.blaqstudios.shikaku" target="_blank" rel="noopener noreferrer" class="btn-play">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a1.455 1.455 0 0 1-.225-.79V2.604c0-.3.083-.58.224-.79zm11.235 11.238l2.583 2.584-12.72 7.34 10.137-9.924zm0-2.104L4.707.824l12.72 7.34-2.583 2.584zm1.488 1.488l3.754 2.167c.942.544.942 1.43 0 1.974l-3.754 2.167-2.316-2.316 2.316-2.192z"/>
+                    </svg>
+                    Get on Google Play
+                </a>
+                <a href="../index.html#games" class="btn-secondary">← All games</a>
+            </div>
+
+            <div class="stat-strip">
+                <span>1,000 levels</span>
+                <span class="dot">·</span>
+                <span>26 grid sizes</span>
+                <span class="dot">·</span>
+                <span>19 languages</span>
+            </div>
+        </section>
+
+        <section id="how-to-play">
+            <div class="split-section">
+                <div class="copy">
+                    <h3>How to Play</h3>
+                    <p>Every puzzle starts the same way: a grid dotted with numbers. Draw a rectangle around each number so its area matches that number exactly — no more, no less. Do that for every number, cover every cell, and the puzzle is solved.</p>
+                    <ul class="rule-list">
+                        <li><span class="num">01</span> One rectangle, one number — never two, never zero.</li>
+                        <li><span class="num">02</span> The rectangle's area must equal the number exactly.</li>
+                        <li><span class="num">03</span> Rectangles can't overlap or leave any cell empty.</li>
+                    </ul>
+                </div>
+                <div class="game-visual">
+                    <div class="puzzle-box puzzle-animate">
+                        <div class="puzzle-meta">
+                            <span>GRID 4x4</span>
+                            <span>LOGIC MATRIX</span>
+                        </div>
+                        <div class="puzzle-matrix">
+                            <div class="cell boxed-amber" style="--i:0">4</div>
+                            <div class="cell boxed-amber" style="--i:1">·</div>
+                            <div class="cell" style="--i:2">·</div>
+                            <div class="cell" style="--i:3">2</div>
+
+                            <div class="cell boxed-amber" style="--i:4">·</div>
+                            <div class="cell boxed-amber" style="--i:5">·</div>
+                            <div class="cell" style="--i:6">·</div>
+                            <div class="cell" style="--i:7">2</div>
+
+                            <div class="cell boxed-blue" style="--i:8">3</div>
+                            <div class="cell boxed-blue" style="--i:9">·</div>
+                            <div class="cell boxed-blue" style="--i:10">·</div>
+                            <div class="cell" style="--i:11">·</div>
+
+                            <div class="cell" style="--i:12">·</div>
+                            <div class="cell" style="--i:13">·</div>
+                            <div class="cell" style="--i:14">1</div>
+                            <div class="cell" style="--i:15">·</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modes">
+            <div class="section-header">
+                <h3>Two Ways to Play</h3>
+                <p>Same core rule, two very different feels.</p>
+            </div>
+            <div class="mode-grid">
+                <div class="mode-card">
+                    <div class="mode-visual">
+                        <div class="puzzle-box">
+                            <div class="puzzle-matrix">
+                                <div class="cell boxed-amber">4</div>
+                                <div class="cell boxed-amber">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell boxed-amber">·</div>
+                                <div class="cell boxed-amber">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="mode-tag">UNLOCKED FROM THE START</span>
+                        <h4>Classic Mode</h4>
+                        <p>Clean rectangles, drawn corner to corner. The Shikaku you already know, with 1,000 handcrafted levels to work through.</p>
+                    </div>
+                </div>
+
+                <div class="mode-card">
+                    <div class="mode-visual">
+                        <div class="puzzle-box">
+                            <div class="puzzle-matrix">
+                                <div class="cell">·</div>
+                                <div class="cell boxed-blue">4</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell boxed-blue">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell boxed-blue">·</div>
+                                <div class="cell boxed-blue">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                                <div class="cell">·</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="mode-tag">UNLOCKED BY PLAYING</span>
+                        <h4>Weird Mode</h4>
+                        <p>Same rule, no straight edges. Boxes can bend and branch into any connected shape, as long as the area still matches. Unlock it by earning 2,000 points clearing puzzles in any mode.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="play-styles">
+            <div class="section-header">
+                <h3>Play It However You Like</h3>
+                <p>Three ways to jump in, depending on the mood.</p>
+            </div>
+            <div class="grid-3">
+                <div class="pillar-card">
+                    <h4>Campaign</h4>
+                    <p>1,000 handcrafted levels across 26 grid sizes, from a gentle 5×5 up to a 30×30 master board.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>Random Play</h4>
+                    <p>Four difficulty presets — Easy, Medium, Hard, Expert — generate a fresh, solvable puzzle every time.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>Custom Grid</h4>
+                    <p>Pick any size from 5×5 to 30×30 and set your own challenge.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mastery">
+            <div class="section-header">
+                <h3>Mastery, Not Just Completion</h3>
+                <p>Every level quietly tracks three things.</p>
+            </div>
+            <div class="mastery-list">
+                <div class="mastery-item">
+                    <span class="mastery-star">★</span>
+                    <div>
+                        <h4>Clear</h4>
+                        <p>Partition the whole grid with no gaps and no overlaps.</p>
+                    </div>
+                </div>
+                <div class="mastery-item">
+                    <span class="mastery-star">★★</span>
+                    <div>
+                        <h4>Flawless</h4>
+                        <p>Solve it within the target move count, with no hints, undos, or erases.</p>
+                    </div>
+                </div>
+                <div class="mastery-item">
+                    <span class="mastery-star">★★★</span>
+                    <div>
+                        <h4>Speed</h4>
+                        <p>Finish inside the target time for that grid's size.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="crown-note">Every 50 levels — in either mode — earns a milestone crown. A small nod to consistency, not just a lucky solve.</p>
+        </section>
+
+        <section id="details">
+            <div class="section-header">
+                <h3>Details That Add Up</h3>
+                <p>The small things that make it pleasant to keep playing.</p>
+            </div>
+
+            <div class="swatch-row">
+                <div class="swatch-card">
+                    <h5>Dark Neon</h5>
+                    <div class="swatch-chips">
+                        <div class="swatch-chip" style="background:#12213b"></div>
+                        <div class="swatch-chip" style="background:#37c6d6"></div>
+                        <div class="swatch-chip" style="background:#ffd166"></div>
+                    </div>
+                </div>
+                <div class="swatch-card">
+                    <h5>Zen Garden</h5>
+                    <div class="swatch-chips">
+                        <div class="swatch-chip" style="background:#F0F5EE"></div>
+                        <div class="swatch-chip" style="background:#7BA07D"></div>
+                        <div class="swatch-chip" style="background:#2E2926"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="pillar-card">
+                    <h4>Fully Offline</h4>
+                    <p>No connection required. Play on a plane, underground, anywhere.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>Smooth on Big Boards</h4>
+                    <p>Zoom and pan stay fluid even on the largest 30×30 grids.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>19 Languages</h4>
+                    <p>Fully translated, switchable instantly from Settings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fair">
+            <div class="section-header">
+                <h3>Fair to Players</h3>
+            </div>
+            <p class="callout">The first five campaign levels are completely ad-free, so there's room to get comfortable before anything else shows up. After that, ads are paced deliberately rather than shown after every move — and a one-time purchase removes them for good, if you'd rather not see any.</p>
+        </section>
+
+        <section id="get-it">
+            <div class="cta-banner">
+                <h3>Ready to give it a try?</h3>
+                <p>Free to play, works offline, no account needed.</p>
+                <div class="cta-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.blaqstudios.shikaku" target="_blank" rel="noopener noreferrer" class="btn-play">
+                        Get on Google Play
+                    </a>
+                    <a href="../index.html" class="btn-secondary">← Back to Blaq Studios</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="brand-name">Blaq Studios</span>
+                    </div>
+                    <p>Independent studio building small, thoughtful games.</p>
+                </div>
+
+                <div class="footer-links-group">
+                    <div>
+                        <h5>GAMES</h5>
+                        <ul>
+                            <li><a href="shikaku.html">Shikaku - Divide by Box</a></li>
+                            <li><span class="muted-item">Next project — in development</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>PUBLISHER</h5>
+                        <ul>
+                            <li><a href="/app-ads.txt">app-ads.txt</a></li>
+                            <li><a href="mailto:aaljinantony@gmail.com">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; <span id="year">2026</span> Blaq Studios. All rights reserved.</span>
+                <span>Hosted on GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

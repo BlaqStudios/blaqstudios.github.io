@@ -1,0 +1,568 @@
+/* ==========================================================================
+   Blaq Studios — Shared Base Styles
+   Tokens, reset, header/footer, and reusable components.
+   Loaded on every page. Page-specific styles live in their own file.
+   ========================================================================== */
+
+:root {
+    --bg-primary: #0d1926;
+    --bg-surface: #142a3d;
+    --bg-surface-elevated: #1b3450;
+    --border-subtle: #24405c;
+    --border-highlight: #345d82;
+    --text-primary: #f2ede0;
+    --text-secondary: #9fb0c4;
+    --text-muted: #5f7288;
+    --accent-blue: #5b9bd9;
+    --accent-amber: #e2984f;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(13, 25, 38, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 50;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-highlight);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.brand-name {
+    font-family: var(--mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.25s var(--ease);
+}
+
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -4px;
+    height: 1px;
+    background: var(--accent-blue);
+    transition: right 0.3s var(--ease);
+}
+
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a.active::after {
+    right: 0;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-cta {
+    background: var(--bg-surface-elevated);
+    color: var(--text-primary) !important;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border-highlight);
+    transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+.nav-cta:hover {
+    border-color: var(--accent-blue);
+    background: var(--bg-surface);
+}
+
+/* ---------- Hero (shared skeleton) ---------- */
+.hero {
+    padding: 64px 0 44px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    background: rgba(91, 155, 217, 0.1);
+    border: 1px solid rgba(91, 155, 217, 0.28);
+    border-radius: 9999px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 22px;
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent-blue);
+    flex-shrink: 0;
+}
+
+.hero h1 {
+    font-family: var(--mono);
+    font-size: clamp(2rem, 4.5vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.hero p {
+    max-width: 560px;
+    margin: 0 auto 28px;
+    color: var(--text-secondary);
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+}
+
+/* One quiet entrance for the hero block only — not repeated per-section. */
+.hero-animate {
+    animation: fadeIn 0.7s var(--ease) both;
+}
+
+/* ---------- Buttons & Status ---------- */
+.btn-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-amber);
+    color: #1a1105;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.btn-play:hover {
+    transform: translateY(-2px);
+    background: #ecab6c;
+    box-shadow: 0 10px 24px rgba(226, 152, 79, 0.25);
+}
+
+.btn-play:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.15s;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 11px 18px;
+    border-radius: 6px;
+    border: 1px solid var(--border-highlight);
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 5px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-dot.live {
+    background: var(--accent-amber);
+    box-shadow: 0 0 6px var(--accent-amber);
+}
+
+.status-dot.progress {
+    background: var(--accent-blue);
+}
+
+/* ---------- Section header ---------- */
+.section-header {
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto 36px;
+}
+
+.section-header h3 {
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ---------- Card grid (pillars / feature cards) ---------- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.pillar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-top: 2px solid var(--accent-blue);
+    border-radius: 6px;
+    padding: 24px 20px;
+}
+
+.pillar-card h4 {
+    font-family: var(--mono);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.pillar-card p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+/* ---------- Game card (used on the homepage listing) ---------- */
+.game-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.game-card--wip {
+    border-style: dashed;
+    box-shadow: none;
+}
+
+.game-info h2 {
+    font-family: var(--mono);
+    font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.game-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    line-height: 1.55;
+}
+
+.game-card--wip .game-info p {
+    margin-bottom: 0;
+}
+
+.feature-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.game-visual {
+    display: flex;
+    justify-content: center;
+}
+
+/* ---------- Puzzle grid diagram (reused across pages) ---------- */
+.puzzle-box {
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-highlight);
+    border-radius: 8px;
+    padding: 18px;
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.puzzle-box--wip {
+    border-style: dashed;
+    box-shadow: none;
+}
+
+.puzzle-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.puzzle-matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    aspect-ratio: 1;
+}
+
+.cell {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cell.boxed-amber {
+    background: rgba(226, 152, 79, 0.18);
+    border: 1.5px solid var(--accent-amber);
+    color: var(--accent-amber);
+}
+
+.cell.boxed-blue {
+    background: rgba(91, 155, 217, 0.18);
+    border: 1.5px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.cell.wip-cell {
+    background: transparent;
+    border: 1.5px dashed var(--border-highlight);
+}
+
+/* One-time reveal for grid cells on load — not a looping animation. */
+.puzzle-animate .cell {
+    animation: cellPop 0.45s var(--ease) both;
+    animation-delay: calc(0.2s + var(--i) * 25ms);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-subtle);
+    background: #0a1420;
+    padding: 36px 0 24px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 260px;
+    margin-top: 8px;
+}
+
+.footer-links-group {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+}
+
+.footer-links-group h5 {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.footer-links-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links-group a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.25s var(--ease);
+}
+
+.footer-links-group a:hover {
+    color: var(--accent-blue);
+}
+
+.muted-item {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+}
+
+/* ---------- Motion ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes cellPop {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .game-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+    .game-visual {
+        order: -1;
+    }
+    .nav-links {
+        display: none;
+    }
+}
