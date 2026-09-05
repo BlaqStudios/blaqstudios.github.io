@@ -236,6 +236,19 @@ header {
     transition-duration: 0.15s;
 }
 
+.text-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border-highlight);
+    transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.text-link:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
 .btn-secondary {
     display: inline-flex;
     align-items: center;

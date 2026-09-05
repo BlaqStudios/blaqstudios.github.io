@@ -1,0 +1,15 @@
+{
+  "_readme": "This is the file you edit whenever you ship a Google Play update. Add one object to the top of the 'releases' array (newest release first) with the version number, the date you released it, and a short list of player-facing changes. Delete this '_readme' key and the example entry below once you've added your real releases. No other file needs to change — the changelog page reads this one directly.",
+
+  "releases": [
+    {
+      "version": "EXAMPLE — replace with your real version",
+      "date": "2026-01-01",
+      "highlights": [
+        "Replace this entry with your actual release notes",
+        "One short line per change, written for players (not commit messages)",
+        "Add a new entry like this one to the top of the list for every future release"
+      ]
+    }
+  ]
+}

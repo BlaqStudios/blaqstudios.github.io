@@ -209,6 +209,84 @@ section + section {
     line-height: 1.65;
 }
 
+/* ---------- Changelog ---------- */
+.changelog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.release-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 22px 26px;
+}
+
+.release-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.release-version {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.latest-pill {
+    background: rgba(226, 152, 79, 0.14);
+    border-color: rgba(226, 152, 79, 0.35);
+    color: var(--accent-amber);
+}
+
+.release-date {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.release-notes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.release-notes li {
+    position: relative;
+    padding-left: 16px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.release-notes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+}
+
+.changelog-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
 /* ---------- Closing CTA ---------- */
 .cta-banner {
     text-align: center;
