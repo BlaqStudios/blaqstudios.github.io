@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blaq Studios is an independent game developer building small, focused games for Android, starting with Shikaku.">
     <title>Blaq Studios | Indie Game Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0c10;
-            --bg-surface: #11141c;
-            --bg-surface-elevated: #181d27;
-            --border-subtle: #222938;
-            --border-highlight: #2f384c;
-            --text-primary: #f3f5f8;
-            --text-secondary: #9aa4b8;
-            --text-muted: #5e697e;
-            --accent: #3b82f6;
-            --emerald: #10b981;
+            --bg-primary: #0d1926;
+            --bg-surface: #142a3d;
+            --bg-surface-elevated: #1b3450;
+            --border-subtle: #24405c;
+            --border-highlight: #345d82;
+            --text-primary: #f2ede0;
+            --text-secondary: #9fb0c4;
+            --text-muted: #5f7288;
+            --accent-blue: #5b9bd9;
+            --accent-amber: #e2984f;
             --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -31,7 +36,7 @@
             min-height: 100%;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: var(--sans);
             line-height: 1.6;
         }
 
@@ -43,9 +48,21 @@
 
         a:focus-visible,
         button:focus-visible {
-            outline: 2px solid var(--accent);
+            outline: 2px solid var(--accent-blue);
             outline-offset: 3px;
             border-radius: 4px;
+        }
+
+        .blueprint-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(91, 155, 217, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(91, 155, 217, 0.07) 1px, transparent 1px);
+            background-size: 42px 42px;
+            pointer-events: none;
+            z-index: 0;
+            animation: gridFadeIn 1.4s var(--ease) both;
         }
 
         .ambient-glow {
@@ -55,8 +72,8 @@
             transform: translateX(-50%);
             width: 100vw;
             max-width: 1200px;
-            height: 380px;
-            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, rgba(10, 12, 16, 0) 70%);
+            height: 420px;
+            background: radial-gradient(circle at 50% 0%, rgba(91, 155, 217, 0.14) 0%, rgba(13, 25, 38, 0) 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -74,7 +91,7 @@
         header {
             position: sticky;
             top: 0;
-            background: rgba(10, 12, 16, 0.92);
+            background: rgba(13, 25, 38, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-subtle);
@@ -99,16 +116,17 @@
         .brand-logo {
             width: 32px;
             height: 32px;
-            background: #181d27;
+            background: var(--bg-surface-elevated);
             border: 1px solid var(--border-highlight);
-            border-radius: 8px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .brand-name {
-            font-size: 1.15rem;
+            font-family: var(--mono);
+            font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: -0.3px;
         }
@@ -124,7 +142,8 @@
             position: relative;
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.25s var(--ease);
         }
@@ -136,7 +155,7 @@
             right: 100%;
             bottom: -4px;
             height: 1px;
-            background: var(--text-primary);
+            background: var(--accent-blue);
             transition: right 0.3s var(--ease);
         }
 
@@ -158,13 +177,13 @@
         }
 
         .nav-cta:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-blue);
             background: var(--bg-surface);
         }
 
         /* Hero */
         .hero {
-            padding: 60px 0 40px;
+            padding: 64px 0 44px;
             text-align: center;
         }
 
@@ -173,44 +192,46 @@
             align-items: center;
             gap: 8px;
             padding: 5px 12px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: rgba(91, 155, 217, 0.1);
+            border: 1px solid rgba(91, 155, 217, 0.28);
             border-radius: 9999px;
-            font-size: 0.8rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
             font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 20px;
-            animation: fadeSlideUp 0.7s var(--ease) both;
+            color: var(--accent-blue);
+            margin-bottom: 22px;
+            animation: fadeIn 0.8s var(--ease) both;
         }
 
         .badge-dot {
-            width: 7px;
-            height: 7px;
-            background-color: var(--emerald);
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-blue);
             border-radius: 50%;
-            box-shadow: 0 0 6px var(--emerald);
+            box-shadow: 0 0 6px var(--accent-blue);
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-family: var(--mono);
+            font-size: clamp(2rem, 4.5vw, 3.1rem);
             font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            margin-bottom: 14px;
-            background: linear-gradient(180deg, #ffffff 40%, #9aa4b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeSlideUp 0.7s var(--ease) both;
-            animation-delay: 0.08s;
+            line-height: 1.18;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            display: inline-block;
+            clip-path: inset(0 100% 0 0);
+            animation: revealText 0.9s var(--ease) both;
+            animation-delay: 0.15s;
         }
 
         .hero p {
-            max-width: 580px;
+            max-width: 560px;
             margin: 0 auto 28px;
             color: var(--text-secondary);
             font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-            animation: fadeSlideUp 0.7s var(--ease) both;
-            animation-delay: 0.16s;
+            animation: fadeIn 0.8s var(--ease) both;
+            animation-delay: 0.55s;
         }
 
         /* Showcase */
@@ -227,21 +248,21 @@
         .game-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 10px;
             padding: 32px;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 32px;
             align-items: center;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-            animation: fadeSlideUp 0.7s var(--ease) both;
-            animation-delay: 0.24s;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+            animation: fadeIn 0.8s var(--ease) both;
+            animation-delay: 0.35s;
         }
 
         .game-card--wip {
             border-style: dashed;
             box-shadow: none;
-            animation-delay: 0.32s;
+            animation-delay: 0.45s;
         }
 
         .status-row {
@@ -249,7 +270,8 @@
             align-items: center;
             gap: 8px;
             margin-bottom: 10px;
-            font-size: 0.8rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
             font-weight: 700;
         }
 
@@ -261,19 +283,20 @@
         }
 
         .status-dot.live {
-            background: var(--emerald);
-            box-shadow: 0 0 6px var(--emerald);
+            background: var(--accent-amber);
+            box-shadow: 0 0 6px var(--accent-amber);
         }
 
         .status-dot.progress {
-            background: var(--accent);
+            background: var(--accent-blue);
             animation: dotPulse 1.8s ease-in-out infinite;
         }
 
         .game-info h2 {
-            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            font-family: var(--mono);
+            font-size: clamp(1.4rem, 2.5vw, 1.7rem);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 12px;
         }
 
@@ -281,7 +304,7 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             margin-bottom: 22px;
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         .game-card--wip .game-info p {
@@ -301,8 +324,9 @@
             padding: 4px 10px;
             background: var(--bg-surface-elevated);
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            font-size: 0.8rem;
+            border-radius: 5px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
             color: var(--text-secondary);
         }
 
@@ -310,20 +334,21 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #ffffff;
-            color: #000000;
+            background: var(--accent-amber);
+            color: #1a1105;
             padding: 11px 20px;
-            border-radius: 8px;
+            border-radius: 6px;
+            font-family: var(--mono);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             text-decoration: none;
             transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
         }
 
         .btn-play:hover {
             transform: translateY(-2px);
-            background: #e6e6e6;
-            box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
+            background: #ecab6c;
+            box-shadow: 0 10px 24px rgba(226, 152, 79, 0.25);
         }
 
         .btn-play:active {
@@ -340,11 +365,11 @@
         .puzzle-box {
             background: var(--bg-surface-elevated);
             border: 1px solid var(--border-highlight);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 18px;
             width: 100%;
             max-width: 280px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
         }
 
         .puzzle-box--wip {
@@ -355,7 +380,8 @@
         .puzzle-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
+            font-family: var(--mono);
+            font-size: 0.72rem;
             color: var(--text-muted);
             font-weight: 600;
             margin-bottom: 12px;
@@ -369,29 +395,30 @@
         }
 
         .cell {
-            background: #0a0c10;
+            background: var(--bg-primary);
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--mono);
             font-size: 0.95rem;
             font-weight: 700;
             color: var(--text-primary);
             animation: cellPop 0.5s var(--ease) both;
-            animation-delay: calc(0.4s + var(--i) * 30ms);
+            animation-delay: calc(0.6s + var(--i) * 30ms);
+        }
+
+        .cell.boxed-amber {
+            background: rgba(226, 152, 79, 0.18);
+            border: 1.5px solid var(--accent-amber);
+            color: var(--accent-amber);
         }
 
         .cell.boxed-blue {
-            background: rgba(59, 130, 246, 0.2);
-            border: 1.5px solid var(--accent);
-            color: var(--accent);
-        }
-
-        .cell.boxed-green {
-            background: rgba(16, 185, 129, 0.2);
-            border: 1.5px solid var(--emerald);
-            color: var(--emerald);
+            background: rgba(91, 155, 217, 0.18);
+            border: 1.5px solid var(--accent-blue);
+            color: var(--accent-blue);
         }
 
         .cell.wip-cell {
@@ -413,7 +440,8 @@
         }
 
         .section-header h3 {
-            font-size: 1.6rem;
+            font-family: var(--mono);
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
@@ -432,12 +460,14 @@
         .pillar-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 12px;
+            border-top: 2px solid var(--accent-blue);
+            border-radius: 6px;
             padding: 24px 20px;
         }
 
         .pillar-card h4 {
-            font-size: 1.05rem;
+            font-family: var(--mono);
+            font-size: 1rem;
             margin-bottom: 8px;
             color: var(--text-primary);
         }
@@ -445,14 +475,14 @@
         .pillar-card p {
             color: var(--text-secondary);
             font-size: 0.88rem;
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         /* Footer */
         footer {
             margin-top: auto;
             border-top: 1px solid var(--border-subtle);
-            background: #07090c;
+            background: #0a1420;
             padding: 36px 0 24px;
         }
 
@@ -480,11 +510,12 @@
         }
 
         .footer-links-group h5 {
-            font-size: 0.8rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             margin-bottom: 10px;
+            color: var(--text-secondary);
         }
 
         .footer-links-group ul {
@@ -502,7 +533,7 @@
         }
 
         .footer-links-group a:hover {
-            color: var(--accent);
+            color: var(--accent-blue);
         }
 
         .muted-item {
@@ -517,12 +548,23 @@
             flex-wrap: wrap;
             gap: 12px;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
         }
 
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(14px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes gridFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes revealText {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0 0 0); }
         }
 
         @keyframes cellPop {
@@ -536,8 +578,8 @@
         }
 
         @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45); }
-            50% { box-shadow: 0 0 0 5px rgba(59, 130, 246, 0); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(91, 155, 217, 0.5); }
+            50% { box-shadow: 0 0 0 5px rgba(91, 155, 217, 0); }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -546,6 +588,7 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.001ms !important;
             }
+            .hero h1 { clip-path: inset(0 0 0 0) !important; }
         }
 
         @media (max-width: 768px) {
@@ -564,6 +607,7 @@
 </head>
 <body>
 
+    <div class="blueprint-grid"></div>
     <div class="ambient-glow"></div>
 
     <header>
@@ -571,7 +615,7 @@
             <div class="nav-inner">
                 <a href="#" class="brand">
                     <div class="brand-logo">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b9bd9" stroke-width="2">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
                             <rect x="14" y="14" width="7" height="7"></rect>
@@ -610,7 +654,7 @@
                     <div class="game-info">
                         <div class="status-row">
                             <span class="status-dot live"></span>
-                            <span style="color: var(--emerald);">Available now</span>
+                            <span style="color: var(--accent-amber);">Available now</span>
                         </div>
                         <h2>Shikaku — Divide by Box</h2>
                         <p>A classic Japanese spatial logic challenge reinvented for Android. Partition the grid into crisp rectangular rooms where each box matches its designated area number.</p>
@@ -636,19 +680,135 @@
                                 <span>LOGIC MATRIX</span>
                             </div>
                             <div class="puzzle-matrix">
-                                <div class="cell boxed-blue" style="--i:0">4</div>
-                                <div class="cell boxed-blue" style="--i:1">·</div>
+                                <div class="cell boxed-amber" style="--i:0">4</div>
+                                <div class="cell boxed-amber" style="--i:1">·</div>
                                 <div class="cell" style="--i:2">·</div>
                                 <div class="cell" style="--i:3">2</div>
 
-                                <div class="cell boxed-blue" style="--i:4">·</div>
-                                <div class="cell boxed-blue" style="--i:5">·</div>
+                                <div class="cell boxed-amber" style="--i:4">·</div>
+                                <div class="cell boxed-amber" style="--i:5">·</div>
                                 <div class="cell" style="--i:6">·</div>
                                 <div class="cell" style="--i:7">2</div>
 
-                                <div class="cell boxed-green" style="--i:8">3</div>
-                                <div class="cell boxed-green" style="--i:9">·</div>
-                                <div class="cell boxed-green" style="--i:10">·</div>
+                                <div class="cell boxed-blue" style="--i:8">3</div>
+                                <div class="cell boxed-blue" style="--i:9">·</div>
+                                <div class="cell boxed-blue" style="--i:10">·</div>
                                 <div class="cell" style="--i:11">·</div>
 
-                                <div class="cell" sty
+                                <div class="cell" style="--i:12">·</div>
+                                <div class="cell" style="--i:13">·</div>
+                                <div class="cell" style="--i:14">1</div>
+                                <div class="cell" style="--i:15">·</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card game-card--wip">
+                    <div class="game-info">
+                        <div class="status-row">
+                            <span class="status-dot progress"></span>
+                            <span style="color: var(--accent-blue);">In development</span>
+                        </div>
+                        <h2>Next project</h2>
+                        <p>Something new is taking shape. Still early — details soon.</p>
+                    </div>
+
+                    <div class="game-visual">
+                        <div class="puzzle-box puzzle-box--wip">
+                            <div class="puzzle-meta">
+                                <span>PROTOTYPE</span>
+                                <span>SKETCHING</span>
+                            </div>
+                            <div class="puzzle-matrix">
+                                <div class="cell wip-cell" style="--i:0"></div>
+                                <div class="cell wip-cell" style="--i:1"></div>
+                                <div class="cell wip-cell" style="--i:2"></div>
+                                <div class="cell wip-cell" style="--i:3"></div>
+                                <div class="cell wip-cell" style="--i:4"></div>
+                                <div class="cell wip-cell" style="--i:5"></div>
+                                <div class="cell wip-cell" style="--i:6"></div>
+                                <div class="cell wip-cell" style="--i:7"></div>
+                                <div class="cell wip-cell" style="--i:8"></div>
+                                <div class="cell wip-cell" style="--i:9"></div>
+                                <div class="cell wip-cell" style="--i:10"></div>
+                                <div class="cell wip-cell" style="--i:11"></div>
+                                <div class="cell wip-cell" style="--i:12"></div>
+                                <div class="cell wip-cell" style="--i:13"></div>
+                                <div class="cell wip-cell" style="--i:14"></div>
+                                <div class="cell wip-cell" style="--i:15"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="pillars">
+            <div class="section-header">
+                <h3>Built with Craft &amp; Intent</h3>
+                <p>Every game we release follows the same handful of principles.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="pillar-card">
+                    <h4>Distraction Free</h4>
+                    <p>Clean typography, tactile feedback, and zero intrusive clutter. The focus stays on the game, not the interface around it.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <h4>Offline Resilience</h4>
+                    <p>Designed to function completely offline without requiring persistent connectivity, preserving battery and local saves.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <h4>Respect for Players</h4>
+                    <p>No predatory monetization loops or misleading mechanics. Just clear rules, fair challenges, and games worth coming back to.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="brand-name">Blaq Studios</span>
+                    </div>
+                    <p>Independent studio building small, thoughtful games.</p>
+                </div>
+
+                <div class="footer-links-group">
+                    <div>
+                        <h5>GAMES</h5>
+                        <ul>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.blaqstudios.shikaku" target="_blank" rel="noopener noreferrer">Shikaku - Divide by Box</a></li>
+                            <li><span class="muted-item">Next project — in development</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>PUBLISHER</h5>
+                        <ul>
+                            <li><a href="/app-ads.txt">app-ads.txt</a></li>
+                            <li><a href="mailto:aaljinantony@gmail.com">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Blaq Studios. All rights reserved.</span>
+                <span>Hosted on GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            console.log("Blaq Studios website loaded successfully.");
+        };
+    </script>
+</body>
+</html>
