@@ -12,9 +12,10 @@
     --border-highlight: #345d82;
     --text-primary: #f2ede0;
     --text-secondary: #9fb0c4;
-    --text-muted: #5f7288;
+    --text-muted: #7b8fa7;
     --accent-blue: #5b9bd9;
     --accent-amber: #e2984f;
+    --accent-itch: #fa5c5c;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -232,6 +233,32 @@ header {
 }
 
 .btn-play:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.15s;
+}
+
+.btn-itch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-itch);
+    color: #ffffff;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.btn-itch:hover {
+    transform: translateY(-2px);
+    background: #ff6b6b;
+    box-shadow: 0 10px 24px rgba(250, 92, 92, 0.35);
+}
+
+.btn-itch:active {
     transform: translateY(0) scale(0.98);
     transition-duration: 0.15s;
 }
@@ -566,6 +593,105 @@ footer {
     }
 }
 
+/* ---------- Legal Prose (Privacy Policy & Terms) ---------- */
+.legal-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 0 80px;
+}
+
+.legal-header {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.legal-header h1 {
+    font-family: var(--mono);
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+.legal-meta {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.legal-content {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+.legal-content h2 {
+    font-family: var(--mono);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 36px 0 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.legal-content h3 {
+    font-family: var(--mono);
+    font-size: 1.02rem;
+    color: var(--text-primary);
+    margin: 22px 0 8px;
+}
+
+.legal-content p {
+    margin-bottom: 16px;
+}
+
+.legal-content ul, .legal-content ol {
+    margin: 12px 0 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legal-content li {
+    padding-left: 4px;
+}
+
+.legal-content strong {
+    color: var(--text-primary);
+}
+
+.legal-content a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(91, 155, 217, 0.35);
+    transition: border-color 0.2s var(--ease);
+}
+
+.legal-content a:hover {
+    border-color: var(--accent-blue);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-menu-btn {
+    display: none;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-highlight);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 7px 10px;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s var(--ease);
+}
+
+.mobile-menu-btn:hover {
+    background: var(--bg-surface);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .game-card {
@@ -575,7 +701,26 @@ footer {
     .game-visual {
         order: -1;
     }
+    .mobile-menu-btn {
+        display: flex;
+    }
     .nav-links {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 25, 38, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-subtle);
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+        z-index: 100;
+    }
+    .nav-links.nav-open {
+        display: flex;
     }
 }

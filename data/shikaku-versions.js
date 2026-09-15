@@ -1,5 +1,7 @@
-{
-  "_instructions": "To update the changelog on the website, simply add a new release object to the top of the 'releases' array below, then commit and push. No other file or code needs to be changed.",
+// Blaq Studios — Shikaku Version Data
+// Loaded directly by shikaku-changelog.html to allow zero-CORS offline file:// and http:// viewing.
+
+window.SHIKAKU_VERSIONS_DATA = {
   "releases": [
     {
       "version": "1.1.3",
@@ -100,4 +102,4 @@
       ]
     }
   ]
-}
+};

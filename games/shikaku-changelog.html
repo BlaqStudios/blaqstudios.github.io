@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Version history and changelog for Shikaku — Divide by Box.">
+    <meta name="description" content="Version history and release notes for Shikaku — Divide by Box by Blaq Studios.">
     <title>Version History — Shikaku | Blaq Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b9bd9' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
+    <!-- OpenGraph / Twitter Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Version History — Shikaku | Blaq Studios">
+    <meta property="og:description" content="What's changed, release by release in Shikaku — Divide by Box.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Version History — Shikaku | Blaq Studios">
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/shikaku.css">
 </head>
@@ -27,6 +34,7 @@
                     </div>
                     <span class="brand-name">Blaq Studios</span>
                 </a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
                 <ul class="nav-links">
                     <li><a href="../index.html#games" class="active">Games</a></li>
                     <li><a href="../index.html#about">About</a></li>
@@ -45,7 +53,15 @@
             </div>
             <h1>Version History</h1>
             <p>What's changed, release by release.</p>
-            <a href="shikaku.html" class="btn-secondary">← Back to Shikaku</a>
+            <div class="cta-actions">
+                <a href="shikaku.html" class="btn-secondary">← Back to Shikaku</a>
+                <a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer" class="btn-itch">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.5 4v16a1.5 1.5 0 0 0 1.5 1.5h16a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 20 2.5H4A1.5 1.5 0 0 0 2.5 4zm4.2 4.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm10.6 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM6.5 14h11v2h-11v-2z"/>
+                    </svg>
+                    Play on itch.io
+                </a>
+            </div>
         </section>
 
         <section id="changelog">
@@ -71,15 +87,25 @@
                         <h5>GAMES</h5>
                         <ul>
                             <li><a href="shikaku.html">Shikaku - Divide by Box</a></li>
+                            <li><a href="shikaku-changelog.html">Version History</a></li>
                             <li><span class="muted-item">Next project — in development</span></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h5>PUBLISHER</h5>
+                        <h5>LEGAL</h5>
                         <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
                             <li><a href="/app-ads.txt">app-ads.txt</a></li>
-                            <li><a href="mailto:aaljinantony@gmail.com">Contact Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>CONTACT</h5>
+                        <ul>
+                            <li><a href="mailto:aaljinantony@gmail.com">Support &amp; Feedback</a></li>
+                            <li><a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer">itch.io Store</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,6 +119,7 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../data/shikaku-versions.js"></script>
     <script src="../scripts/changelog.js"></script>
 </body>
 </html>

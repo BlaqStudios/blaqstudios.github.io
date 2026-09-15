@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blaq Studios is an independent game developer building small, focused games for Android, starting with Shikaku.">
+    <meta name="description" content="Blaq Studios is an independent game developer crafting focused, distraction-free spatial logic puzzles for Web and Mobile, starting with Shikaku.">
     <title>Blaq Studios | Indie Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b9bd9' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
+    <!-- OpenGraph / Twitter Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blaq Studios | Indie Game Developer">
+    <meta property="og:description" content="Independent studio building small, thoughtful games for Web and Android. Play Shikaku free today.">
+    <meta property="og:url" content="https://blaqstudios.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blaq Studios | Small games. Built with care.">
+    <meta name="twitter:description" content="Crafted spatial logic puzzles for Web and Android.">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/home.css">
 </head>
@@ -29,6 +38,7 @@
                     </div>
                     <span class="brand-name">Blaq Studios</span>
                 </a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
                 <ul class="nav-links">
                     <li><a href="#games" class="active">Games</a></li>
                     <li><a href="#about">About</a></li>
@@ -42,10 +52,10 @@
         <section class="hero hero-animate">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Independent Mobile Game Studio</span>
+                <span>Independent Game Studio</span>
             </div>
             <h1>Small games.<br>Built with care.</h1>
-            <p>Blaq Studios is an independent developer making small, focused games for Android. Shikaku is our first release, with more titles taking shape.</p>
+            <p>Blaq Studios is an independent developer making focused, distraction-free spatial and logic puzzles. Play Shikaku right now in your web browser or on Android.</p>
         </section>
 
         <section id="games" class="showcase">
@@ -59,23 +69,32 @@
                     <div class="game-info">
                         <div class="status-row">
                             <span class="status-dot live"></span>
-                            <span style="color: var(--accent-amber);">Available now</span>
+                            <span style="color: var(--accent-amber);">Available now on Web &amp; Google Play</span>
                         </div>
                         <h2>Shikaku — Divide by Box</h2>
-                        <p>A classic Japanese spatial logic challenge reinvented for Android. Partition the grid into crisp rectangular rooms where each box matches its designated area number.</p>
+                        <p>A classic spatial logic challenge reinvented with 2,000 handcrafted levels, clean rectangular and organic polyomino partitioning, 3 visual themes, and instant browser play.</p>
 
                         <div class="feature-pills">
-                            <span class="pill">1,000 Levels</span>
-                            <span class="pill">Two Game Modes</span>
+                            <span class="pill">2,000 Levels</span>
+                            <span class="pill">Classic &amp; Weird Modes</span>
+                            <span class="pill">Web &amp; Android</span>
                             <span class="pill">19 Languages</span>
                         </div>
 
-                        <a href="games/shikaku.html" class="btn-play">
-                            Learn more
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14M13 6l6 6-6 6"/>
-                            </svg>
-                        </a>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+                            <a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer" class="btn-itch">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M2.5 4v16a1.5 1.5 0 0 0 1.5 1.5h16a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 20 2.5H4A1.5 1.5 0 0 0 2.5 4zm4.2 4.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm10.6 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM6.5 14h11v2h-11v-2z"/>
+                                </svg>
+                                Play on itch.io
+                            </a>
+                            <a href="games/shikaku.html" class="btn-play">
+                                Learn more
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="game-visual">
@@ -195,10 +214,19 @@
                     </div>
 
                     <div>
-                        <h5>PUBLISHER</h5>
+                        <h5>LEGAL</h5>
                         <ul>
+                            <li><a href="games/privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="games/terms-and-conditions.html">Terms &amp; Conditions</a></li>
                             <li><a href="/app-ads.txt">app-ads.txt</a></li>
-                            <li><a href="mailto:aaljinantony@gmail.com">Contact Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>CONTACT</h5>
+                        <ul>
+                            <li><a href="mailto:aaljinantony@gmail.com">Support &amp; Feedback</a></li>
+                            <li><a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer">itch.io Store</a></li>
                         </ul>
                     </div>
                 </div>

@@ -163,6 +163,123 @@ section + section {
     margin: 0 auto;
 }
 
+/* ---------- Interactive Theme & Mode Previewer ---------- */
+.interactive-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.preview-switcher {
+    display: flex;
+    gap: 6px;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
+    padding: 4px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.preview-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 5px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+}
+
+.preview-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.preview-tab-btn.active {
+    background: var(--bg-primary);
+    color: var(--accent-amber);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme classes for .puzzle-box */
+.puzzle-theme-dark-neon {
+    background: #0c1524;
+    border-color: #345d82;
+}
+
+.puzzle-theme-dark-zen {
+    background: #181513;
+    border-color: #3b3530;
+}
+.puzzle-theme-dark-zen .cell {
+    background: #12100e;
+    border-color: #2b2622;
+    color: #e5dfd5;
+}
+.puzzle-theme-dark-zen .cell.boxed-amber {
+    background: rgba(201, 160, 80, 0.18);
+    border-color: #c9a050;
+    color: #c9a050;
+}
+.puzzle-theme-dark-zen .cell.boxed-blue {
+    background: rgba(123, 160, 125, 0.22);
+    border-color: #7ba07d;
+    color: #92b894;
+}
+
+.puzzle-theme-light-zen {
+    background: #f0f5ee;
+    border-color: #d1d9ce;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+.puzzle-theme-light-zen .puzzle-meta {
+    color: #6b7768;
+}
+.puzzle-theme-light-zen .cell {
+    background: #e4ebe1;
+    border-color: #c8d4c5;
+    color: #2e2926;
+}
+.puzzle-theme-light-zen .cell.boxed-amber {
+    background: #fce8cc;
+    border-color: #d48b3b;
+    color: #8f5312;
+}
+.puzzle-theme-light-zen .cell.boxed-blue {
+    background: #dbeef0;
+    border-color: #559da6;
+    color: #225e66;
+}
+
+.puzzle-theme-weird {
+    background: #130d24;
+    border-color: #5c3588;
+}
+.puzzle-theme-weird .puzzle-meta {
+    color: #a78bfa;
+}
+.puzzle-theme-weird .cell {
+    background: #0a0614;
+    border-color: #2e1e47;
+    color: #f3e8ff;
+}
+.puzzle-theme-weird .cell.boxed-poly-1 {
+    background: rgba(184, 50, 128, 0.25);
+    border-color: #b83280;
+    color: #ff77c6;
+}
+.puzzle-theme-weird .cell.boxed-poly-2 {
+    background: rgba(139, 92, 246, 0.25);
+    border-color: #8b5cf6;
+    color: #c4b5fd;
+}
+
 /* ---------- Theme swatches ---------- */
 .swatch-row {
     display: grid;
@@ -237,6 +354,13 @@ section + section {
     font-family: var(--mono);
     font-weight: 700;
     font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.release-title {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.88rem;
     color: var(--text-primary);
 }
 

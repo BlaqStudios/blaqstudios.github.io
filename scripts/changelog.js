@@ -1,7 +1,5 @@
 // Blaq Studios — changelog loader
-// Reads data/shikaku-versions.json and renders it into #changelog-list.
-// To publish a new release: edit that JSON file and push. This script
-// does not need to change when you add releases.
+// Reads window.SHIKAKU_VERSIONS_DATA or fetches data/shikaku-versions.json and renders it into #changelog-list.
 
 (function () {
     function escapeHtml(str) {
@@ -22,6 +20,7 @@
 
     function renderRelease(release, isLatest) {
         var version = escapeHtml(release.version || 'Unversioned');
+        var title = escapeHtml(release.title || '');
         var date = formatDate(release.date);
         var highlights = Array.isArray(release.highlights) ? release.highlights : [];
 
@@ -34,6 +33,7 @@
                 '<div class="release-head">' +
                     '<span class="release-version">v' + version + '</span>' +
                     (isLatest ? '<span class="pill latest-pill">Latest</span>' : '') +
+                    (title ? '<span class="release-title">' + title + '</span>' : '') +
                     (date ? '<span class="release-date">' + date + '</span>' : '') +
                 '</div>' +
                 (notesHtml ? '<ul class="release-notes">' + notesHtml + '</ul>' : '') +
@@ -62,14 +62,38 @@
         if (!container) return;
         container.innerHTML =
             '<p class="changelog-state">Version history couldn\'t be loaded right now. ' +
-            'If you\'re previewing this page as a local file, it needs to be served over ' +
-            'http/https (e.g. GitHub Pages, or a local dev server) — browsers block local ' +
-            'file reads by default.</p>';
+            'If you\'re previewing this page as a local file, ensure data/shikaku-versions.js is included.</p>';
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         var container = document.getElementById('changelog-list');
         if (!container) return;
+
+        // When hosted on the website (http: or https:), ALWAYS fetch data/shikaku-versions.json
+        // with cache-busting timestamp so newly pushed changes appear immediately without code changes.
+        if (location.protocol === 'http:' || location.protocol === 'https:') {
+            fetch('../data/shikaku-versions.json?t=' + Date.now())
+                .then(function (res) {
+                    if (!res.ok) throw new Error('Failed to fetch version data: ' + res.status);
+                    return res.json();
+                })
+                .then(render)
+                .catch(function () {
+                    if (typeof window !== 'undefined' && window.SHIKAKU_VERSIONS_DATA) {
+                        render(window.SHIKAKU_VERSIONS_DATA);
+                    } else {
+                        showError();
+                    }
+                });
+            return;
+        }
+
+        // When opened locally via file:/// protocol (where browser CORS blocks fetch),
+        // use offline fallback data so the page displays without network errors.
+        if (typeof window !== 'undefined' && window.SHIKAKU_VERSIONS_DATA) {
+            render(window.SHIKAKU_VERSIONS_DATA);
+            return;
+        }
 
         fetch('../data/shikaku-versions.json')
             .then(function (res) {
