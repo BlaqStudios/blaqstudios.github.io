@@ -3,17 +3,17 @@
    ========================================================================== */
 
 .game-hero {
-    padding-bottom: 20px;
+    padding-bottom: 32px;
 }
 
 .stat-strip {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
-    font-family: var(--mono);
-    font-size: 0.82rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     color: var(--text-secondary);
 }
 
@@ -22,7 +22,7 @@
 }
 
 section {
-    padding: 50px 0;
+    padding: var(--space-2xl) 0;
 }
 
 section + section {
@@ -33,43 +33,45 @@ section + section {
 .split-section {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
+    gap: var(--space-xl);
     align-items: center;
 }
 
 .split-section .copy h3 {
-    font-family: var(--mono);
-    font-size: 1.4rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .split-section .copy p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 22px;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
 }
 
 .rule-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 .rule-list li {
     display: flex;
     align-items: baseline;
-    gap: 12px;
-    font-size: 0.92rem;
+    gap: 14px;
+    font-size: 0.95rem;
     color: var(--text-primary);
+    line-height: 1.6;
 }
 
 .rule-list .num {
     font-family: var(--mono);
-    color: var(--accent-blue);
+    color: var(--accent-primary);
     font-weight: 700;
     font-size: 0.85rem;
     flex-shrink: 0;
@@ -78,18 +80,25 @@ section + section {
 /* ---------- Two Ways to Play ---------- */
 .mode-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-md);
 }
 
 .mode-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 28px;
+    border-radius: 16px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+    transition: all 400ms var(--ease-smooth);
+}
+
+.mode-card:hover {
+    transform: translateY(-4px) rotate(-0.5deg);
+    box-shadow: var(--shadow-float);
+    border-color: var(--border-highlight);
 }
 
 .mode-card .mode-visual {
@@ -98,69 +107,77 @@ section + section {
 }
 
 .mode-card .puzzle-box {
-    max-width: 180px;
+    max-width: 200px;
 }
 
 .mode-card h4 {
-    font-family: var(--mono);
-    font-size: 1.05rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
     color: var(--text-primary);
 }
 
 .mode-card p {
     color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.55;
+    font-size: 0.95rem;
+    line-height: 1.65;
 }
 
 .mode-tag {
     font-family: var(--mono);
     font-size: 0.72rem;
     color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* ---------- Mastery (icon-led list, distinct rhythm from cards) ---------- */
 .mastery-list {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    max-width: 640px;
-    margin: 0 auto 28px;
+    gap: 28px;
+    max-width: 680px;
+    margin: 0 auto 36px;
 }
 
 .mastery-item {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: flex-start;
+    transition: all 300ms var(--ease-smooth);
+}
+
+.mastery-item:hover {
+    transform: translateX(8px);
 }
 
 .mastery-star {
     font-family: var(--mono);
-    color: var(--accent-amber);
-    font-size: 1.1rem;
+    color: var(--accent-secondary);
+    font-size: 1.2rem;
     line-height: 1.4;
     flex-shrink: 0;
-    width: 24px;
+    width: 28px;
 }
 
 .mastery-item h4 {
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-size: 1rem;
+    margin-bottom: 6px;
     color: var(--text-primary);
 }
 
 .mastery-item p {
     color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .crown-note {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 0.88rem;
-    max-width: 480px;
+    font-size: 0.95rem;
+    max-width: 520px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* ---------- Interactive Theme & Mode Previewer ---------- */

@@ -8,23 +8,47 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    max-width: 1200px;
-    height: 380px;
-    background: radial-gradient(circle at 50% 0%, rgba(91, 155, 217, 0.12) 0%, rgba(13, 25, 38, 0) 70%);
+    max-width: 1400px;
+    height: 500px;
+    background: radial-gradient(circle at 50% 0%, rgba(199, 125, 255, 0.15) 0%, rgba(26, 22, 37, 0) 70%);
     pointer-events: none;
     z-index: 0;
+    animation: pulse 8s ease-in-out infinite;
 }
 
 .showcase {
-    padding: 10px 0 50px;
+    padding: var(--space-xl) 0 var(--space-2xl);
 }
 
 .games-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-lg);
 }
 
 .pillars {
-    padding: 20px 0 60px;
+    padding: var(--space-xl) 0 var(--space-2xl);
+}
+
+/* Alternating game card layouts for visual rhythm */
+.game-card:nth-child(even) {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.game-card:nth-child(even) .game-visual {
+    order: -1;
+}
+
+@media (max-width: 768px) {
+    .showcase {
+        padding: var(--space-lg) 0 var(--space-xl);
+    }
+
+    .pillars {
+        padding: var(--space-lg) 0 var(--space-xl);
+    }
+
+    .game-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
 }

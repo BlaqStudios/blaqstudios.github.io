@@ -7,8 +7,8 @@
     <title>Blaq Studios | Indie Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b9bd9' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c77dff' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
     <!-- OpenGraph / Twitter Meta -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blaq Studios | Indie Game Developer">
@@ -24,12 +24,12 @@
 
     <div class="ambient-glow"></div>
 
-    <header>
+    <header class="initial">
         <div class="wrapper">
             <div class="nav-inner">
                 <a href="index.html" class="brand">
                     <div class="brand-logo">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b9bd9" stroke-width="2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c77dff" stroke-width="2">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
                             <rect x="14" y="14" width="7" height="7"></rect>
@@ -42,7 +42,7 @@
                 <ul class="nav-links">
                     <li><a href="#games" class="active">Games</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta">Support</a></li>
+                    <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta ripple-container">Support</a></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +50,7 @@
 
     <main class="wrapper">
         <section class="hero hero-animate">
-            <div class="badge">
+            <div class="badge float-element">
                 <span class="badge-dot"></span>
                 <span>Independent Game Studio</span>
             </div>
@@ -58,18 +58,18 @@
             <p>Blaq Studios is an independent developer making focused, distraction-free spatial and logic puzzles. Play Shikaku right now in your web browser or on Android.</p>
         </section>
 
-        <section id="games" class="showcase">
+        <section id="games" class="showcase reveal-on-scroll">
             <div class="section-header">
                 <h3>Games</h3>
                 <p>One shipped, more taking shape.</p>
             </div>
 
             <div class="games-grid">
-                <div class="game-card">
+                <div class="game-card reveal-on-scroll">
                     <div class="game-info">
                         <div class="status-row">
                             <span class="status-dot live"></span>
-                            <span style="color: var(--accent-amber);">Available now on Web &amp; Google Play</span>
+                            <span style="color: var(--accent-secondary);">Available now on Web &amp; Google Play</span>
                         </div>
                         <h2>Shikaku — Divide by Box</h2>
                         <p>A classic spatial logic challenge reinvented with 2,000 handcrafted levels, clean rectangular and organic polyomino partitioning, 3 visual themes, and instant browser play.</p>
@@ -82,13 +82,13 @@
                         </div>
 
                         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
-                            <a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer" class="btn-itch">
+                            <a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer" class="btn-itch ripple-container">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M2.5 4v16a1.5 1.5 0 0 0 1.5 1.5h16a1.5 1.5 0 0 0 1.5-1.5V4A1.5 1.5 0 0 0 20 2.5H4A1.5 1.5 0 0 0 2.5 4zm4.2 4.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm10.6 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM6.5 14h11v2h-11v-2z"/>
                                 </svg>
                                 Play on itch.io
                             </a>
-                            <a href="games/shikaku.html" class="btn-play">
+                            <a href="games/shikaku.html" class="btn-play ripple-container">
                                 Learn more
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                     <path d="M5 12h14M13 6l6 6-6 6"/>
@@ -97,7 +97,7 @@
                         </div>
                     </div>
 
-                    <div class="game-visual">
+                    <div class="game-visual float-element">
                         <div class="puzzle-box puzzle-animate">
                             <div class="puzzle-meta">
                                 <span>GRID 4x4</span>
@@ -128,11 +128,11 @@
                     </div>
                 </div>
 
-                <div class="game-card game-card--wip">
+                <div class="game-card game-card--wip reveal-on-scroll">
                     <div class="game-info">
                         <div class="status-row">
                             <span class="status-dot progress"></span>
-                            <span style="color: var(--accent-blue);">In development</span>
+                            <span style="color: var(--accent-primary);">In development</span>
                         </div>
                         <h2>Next project</h2>
                         <p>Something new is taking shape. Still early — details soon.</p>
@@ -168,24 +168,24 @@
             </div>
         </section>
 
-        <section id="about" class="pillars">
+        <section id="about" class="pillars reveal-on-scroll">
             <div class="section-header">
                 <h3>Built with Craft &amp; Intent</h3>
                 <p>Every game we release follows the same handful of principles.</p>
             </div>
 
             <div class="grid-3">
-                <div class="pillar-card">
+                <div class="pillar-card reveal-on-scroll">
                     <h4>Distraction Free</h4>
                     <p>Clean typography, tactile feedback, and zero intrusive clutter. The focus stays on the game, not the interface around it.</p>
                 </div>
 
-                <div class="pillar-card">
+                <div class="pillar-card reveal-on-scroll">
                     <h4>Offline Resilience</h4>
                     <p>Designed to function completely offline without requiring persistent connectivity, preserving battery and local saves.</p>
                 </div>
 
-                <div class="pillar-card">
+                <div class="pillar-card reveal-on-scroll">
                     <h4>Respect for Players</h4>
                     <p>No predatory monetization loops or misleading mechanics. Just clear rules, fair challenges, and games worth coming back to.</p>
                 </div>
