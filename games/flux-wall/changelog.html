@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux Wall — Changelog | Blaq Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../../data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c77dff' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/flux-wall.css">
+</head>
+<body>
+
+<div class="ambient-glow"></div>
+
+<header class="initial">
+    <div class="wrapper">
+        <div class="nav-inner">
+            <a href="../../index.html" class="brand">
+                <div class="brand-logo">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c77dff" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </div>
+                <span class="brand-name">Blaq Studios</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html#games" class="active">Games</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta ripple-container">Support</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main class="wrapper">
+
+<section class="hero hero-animate">
+    <div class="badge float-element">
+        <span class="badge-dot"></span>
+        <span>Development Updates</span>
+    </div>
+    <h1>Flux Wall<br>Version History</h1>
+    <p>Track the evolution of Flux Wall from concept to release.</p>
+</section>
+
+<section id="changelog" class="reveal-on-scroll">
+    <div class="section-header">
+        <h3>Changelog</h3>
+        <p>All notable changes to this project will be documented here.</p>
+    </div>
+
+    <div class="changelog-list">
+        <article class="release-card">
+            <div class="release-head">
+                <span class="release-version">v0.1.0</span>
+                <span class="pill latest-pill">Latest</span>
+                <span class="release-title">Initial Prototype</span>
+                <span class="release-date">Sep 2026</span>
+            </div>
+            <ul class="release-notes">
+                <li>Core mechanic implemented: tap-to-hop with strict alternation</li>
+                <li>9-theme flux system designed and documented</li>
+                <li>Fairness invariant established for wall obstacle tracks</li>
+                <li>Chrome UI identity finalized</li>
+                <li>Basic Godot 4.7 project structure in place</li>
+            </ul>
+        </article>
+    </div>
+
+    <p class="changelog-state" style="text-align: center; color: var(--text-muted); max-width: 480px; margin: 24px auto 0;">
+        This is an early development changelog. More detailed version history will be available as development progresses.
+    </p>
+</section>
+
+<section class="cta-banner reveal-on-scroll">
+    <h3>Want to dive deeper?</h3>
+    <p>The full Game & Technical Design Bible is available in the <a href="FluxWall_GDD.md">FluxWall_GDD.md</a> file in this directory.</p>
+    <div class="cta-actions">
+        <a href="FluxWall_GDD.md" class="btn-secondary ripple-container">
+            View Full Design Document
+        </a>
+        <a href="index.html" class="btn-secondary">← Back to Flux Wall</a>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrapper">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand">
+                    <span class="brand-name">Blaq Studios</span>
+                </div>
+                <p>Independent studio building small, thoughtful games.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <div>
+                    <h5>GAMES</h5>
+                    <ul>
+                        <li><a href="../../index.html#games">Games</a></li>
+                        <li><span class="muted-item">Flux Wall — in development</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5>STUDIO</h5>
+                    <ul>
+                        <li><a href="../../index.html#games">Games</a></li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="/app-ads.txt">app-ads.txt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5>CONTACT</h5>
+                    <ul>
+                        <li><a href="mailto:aaljinantony@gmail.com">Support & Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; <span id="year">2026</span> Blaq Studios. All rights reserved.</span>
+                <span>Hosted on GitHub Pages</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../../scripts/main.js"></script>
+</body>
+</html>

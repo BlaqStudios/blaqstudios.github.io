@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Blaq Studios — Flux Wall game page styles
+   ========================================================================== */
+
+.game-hero {
+    padding-bottom: 32px;
+}
+
+.stat-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Since we're not using stats for now, commenting out dot styling */
+/* .stat-strip .dot {
+    color: var(--border-highlight);
+} */
+
+/* Consistent section spacing */
+section {
+    padding: var(--space-2xl) 0;
+}
+
+section + section {
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* ---------- Flux Theme Table ---------- */
+.flux-theme-table {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 24px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+}
+
+.flux-theme-table th,
+.flux-theme-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.flux-theme-table th {
+    background: var(--bg-surface-elevated);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.flux-theme-table td {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.flux-theme-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.flux-theme-table tbody tr:nth-child(even) {
+    background: rgba(199, 125, 255, 0.03);
+}
+
+/* ---------- How It Works Section Visual ---------- */
+/* Custom styling for the shaft visualization in .how-it-works .game-visual */
+.game-visual .puzzle-box {
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-highlight);
+}
+
+.game-visual .puzzle-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.game-visual .puzzle-matrix {
+    display: grid;
+    gap: 2px;
+    aspect-ratio: 1 / 17.78; /* Tall narrow shaft representation */
+}
+
+.game-visual .cell {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    min-height: 28px;
+}
+
+.game-visual .cell.boxed-blue {
+    background: rgba(199, 125, 255, 0.2);
+    border: 1.5px solid var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.game-visual .cell.boxed-amber {
+    background: rgba(255, 169, 77, 0.2);
+    border: 1.5px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+/* Cell animations for the shaft visualization */
+.puzzle-animate .cell {
+    animation: cellPop 0.6s var(--ease-bounce) both;
+    animation-delay: calc(0.1s + var(--i) * 25ms);
+}
+
+/* Swatch row tweaks if needed */
+.swatch-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.swatch-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.swatch-card h5 {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.swatch-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.swatch-chip {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- CTA Banner ---------- */
+.cta-banner {
+    text-align: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 44px 24px;
+}
+
+.cta-banner h3 {
+    font-family: var(--mono);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .split-section .game-visual {
+        order: -1;
+        margin-bottom: 12px;
+    }
+
+    .flux-theme-table {
+        font-size: 0.85rem;
+    }
+
+    .flux-theme-table th,
+    .flux-theme-table td {
+        padding: 12px 16px;
+    }
+
+    .swatch-row {
+        grid-template-columns: 1fr;
+    }
+}
