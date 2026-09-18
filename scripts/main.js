@@ -26,47 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 3. Ripple Effect on Buttons and Interactive Elements
-    function createRipple(event) {
+    // 3. Morphing Button Effect on Click
+    function createMorphingEffect(event) {
         var button = event.currentTarget;
 
-        // Only add ripple if not in reduced motion mode
+        // Only add effect if not in reduced motion mode
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             return;
         }
 
-        var ripple = document.createElement('span');
-        var rect = button.getBoundingClientRect();
-        var size = Math.max(rect.width, rect.height);
-        var x = event.clientX - rect.left - size / 2;
-        var y = event.clientY - rect.top - size / 2;
+        // Add morphing class to trigger the effect
+        button.classList.add('morphing-effect');
 
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple-effect');
-
-        // Remove any existing ripples
-        var existingRipple = button.querySelector('.ripple-effect');
-        if (existingRipple) {
-            existingRipple.remove();
-        }
-
-        button.appendChild(ripple);
-
-        // Remove ripple after animation
+        // Remove the class after animation completes
         setTimeout(function() {
-            ripple.remove();
-        }, 600);
+            button.classList.remove('morphing-effect');
+        }, 400);
     }
 
-    // Add ripple effect to all buttons and interactive elements
-    var rippleElements = document.querySelectorAll('.ripple-container, .btn-play, .btn-itch, .btn-secondary, .nav-cta, .preview-tab-btn');
-    rippleElements.forEach(function(element) {
-        element.addEventListener('click', createRipple);
+    // Add morphing effect to all buttons and interactive elements
+    var morphingElements = document.querySelectorAll('.btn-play, .btn-itch, .btn-secondary, .nav-cta, .preview-tab-btn');
+    morphingElements.forEach(function(element) {
+        element.addEventListener('click', createMorphingEffect);
     });
 
-    // 4. Floating Navigation on Scroll
+    // 4. Morphing Navigation on Scroll
     var header = document.querySelector('header');
     var lastScrollTop = 0;
     var scrollThreshold = 100;
@@ -75,14 +59,62 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateNavigation(scrollPos) {
         if (window.innerWidth > 768) {
             if (scrollPos > scrollThreshold) {
-                header.classList.add('visible');
+                // Scrolled down - morph to rectangular shape
+                header.classList.add('morphing-down');
+                header.classList.remove('morphing-up');
                 header.classList.remove('initial');
+                // Create star particles at top of header
+                createStarParticles(header, 'down', scrollPos);
             } else {
-                header.classList.remove('visible');
-                header.classList.add('initial');
+                // Scrolled up - morph back to circular
+                header.classList.add('morphing-up');
+                header.classList.remove('morphing-down');
+                // Create star particles at top of header
+                createStarParticles(header, 'up', scrollPos);
             }
         }
         ticking = false;
+    }
+
+    function createStarParticles(element, direction, scrollPos) {
+        // Remove any existing particles first
+        var existingParticles = element.querySelectorAll('.star-particle');
+        existingParticles.forEach(function(particle) {
+            particle.remove();
+        });
+
+        // Create 5-10 star particles based on scroll position
+        var particleCount = Math.floor((scrollPos % 100) / 10) + 5;
+
+        for (var i = 0; i < particleCount; i++) {
+            var particle = document.createElement('div');
+            particle.className = 'star-particle';
+
+            // Random position at top of header
+            var particleX = Math.random() * element.offsetWidth;
+            particle.style.left = particleX + 'px';
+
+            // Random size and animation
+            var size = Math.random() * 3 + 2; // 2-5px
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+
+            // Set animation based on direction
+            if (direction === 'down') {
+                particle.style.animation = 'starBurstDown ' + (Math.random() * 0.5 + 0.5) + 's ease-out';
+            } else {
+                particle.style.animation = 'starBurstUp ' + (Math.random() * 0.5 + 0.5) + 's ease-out';
+            }
+
+            element.appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(function() {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 1000);
+        }
     }
 
     window.addEventListener('scroll', function() {
@@ -207,27 +239,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 8. Add ripple CSS dynamically if not already present
-    if (!document.querySelector('style[data-ripple-styles]')) {
-        var style = document.createElement('style');
-        style.setAttribute('data-ripple-styles', 'true');
-        style.textContent = `
-            .ripple-effect {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple-animation 600ms ease-out;
-                pointer-events: none;
-            }
-
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-});
+    });
