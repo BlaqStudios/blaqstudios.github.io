@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Scrolled down - morph to rectangular shape
                 header.classList.add('morphing-down');
                 header.classList.remove('morphing-up');
+                header.classList.add('visible');
                 header.classList.remove('initial');
                 // Create star particles at top of header
                 createStarParticles(header, 'down', scrollPos);
@@ -69,9 +70,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Scrolled up - morph back to circular
                 header.classList.add('morphing-up');
                 header.classList.remove('morphing-down');
+                header.classList.add('visible');
+                header.classList.remove('initial');
                 // Create star particles at top of header
                 createStarParticles(header, 'up', scrollPos);
             }
+        } else {
+            // Mobile: always visible
+            header.classList.add('visible');
+            header.classList.add('initial');
+            header.classList.remove('morphing-up');
+            header.classList.remove('morphing-down');
         }
         ticking = false;
     }
