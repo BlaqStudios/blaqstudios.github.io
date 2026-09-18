@@ -151,7 +151,8 @@ header.initial {
     transform: none;
     width: 100%;
     max-width: none;
-    border-radius: 0;
+    /* Keep the semicircle shape from base header */
+    /* border-radius: 0; */
     background: rgba(26, 22, 37, 0.92);
 }
 
@@ -864,12 +865,12 @@ header.morphing-down {
 
 @keyframes headerMorphUp {
     0% {
-        border-radius: 0;
+        border-radius: 50px;
         background: rgba(26, 22, 37, 0.92);
         transform: translateX(-50%) scale(1);
     }
     50% {
-        border-radius: 999px;
+        border-radius: 50px;
         background: rgba(26, 22, 37, 0.7);
         transform: translateX(-50%) scale(0.98);
     }
@@ -887,12 +888,12 @@ header.morphing-down {
         transform: translateX(-50%) scale(1);
     }
     50% {
-        border-radius: 999px;
+        border-radius: 50px;
         background: rgba(26, 22, 37, 0.92);
         transform: translateX(-50%) scale(0.98);
     }
     100% {
-        border-radius: 0;
+        border-radius: 50px;
         background: rgba(26, 22, 37, 0.92);
         transform: translateX(-50%) scale(1);
     }

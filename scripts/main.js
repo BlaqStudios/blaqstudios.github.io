@@ -59,21 +59,31 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateNavigation(scrollPos) {
         if (window.innerWidth > 768) {
             if (scrollPos > scrollThreshold) {
-                // Scrolled down - morph to rectangular shape
+                // Scrolled down - add morphing-down, keep initial for shape
                 header.classList.add('morphing-down');
                 header.classList.remove('morphing-up');
                 header.classList.add('visible');
-                header.classList.remove('initial');
+                // Keep initial class to maintain semicircle shape
+                // header.classList.remove('initial'); // REMOVE THIS LINE
                 // Create star particles at top of header
                 createStarParticles(header, 'down', scrollPos);
+                // Remove morphing class after animation to preserve initial styling
+                setTimeout(function() {
+                    header.classList.remove('morphing-down');
+                }, 600); // Match animation duration
             } else {
-                // Scrolled up - morph back to circular
+                // Scrolled up - add morphing-up, keep initial for shape
                 header.classList.add('morphing-up');
                 header.classList.remove('morphing-down');
                 header.classList.add('visible');
-                header.classList.remove('initial');
+                // Keep initial class to maintain semicircle shape
+                // header.classList.remove('initial'); // REMOVE THIS LINE
                 // Create star particles at top of header
                 createStarParticles(header, 'up', scrollPos);
+                // Remove morphing class after animation to preserve initial styling
+                setTimeout(function() {
+                    header.classList.remove('morphing-up');
+                }, 600); // Match animation duration
             }
         } else {
             // Mobile: always visible
