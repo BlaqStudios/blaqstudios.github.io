@@ -118,7 +118,7 @@ This plan isolates the header layout, animation keyframes, and scroll event pipe
 
 ## 4. Verification & Testing Criteria
 
-- [ ] Scroll slowly from top of `index.html` to bottom; verify header transitions smoothly without any horizontal jumping, jerking, or teleporting.
-- [ ] Monitor Chrome DevTools Performance panel during scroll: verify 60fps frame rate with zero layout shifts (CLS = 0) and negligible DOM element count increase.
-- [ ] Test in Mobile emulation (375px width): verify header stays visible and sticky, navigation hamburger functions cleanly.
-- [ ] Test on subpages (`games/shikaku/index.html`, `games/flux-wall/index.html`): verify header remains perfectly stable.
+- [x] Scroll slowly from top of `index.html` to bottom; verify header transitions smoothly without any horizontal jumping, jerking, or teleporting.
+- [x] Monitor Chrome DevTools Performance panel during scroll: verify 60fps frame rate with zero layout shifts (CLS = 0) and negligible DOM element count increase.
+- [x] Test in Mobile emulation (375px width): verify header stays visible and sticky, navigation hamburger functions cleanly.
+- [x] Test on subpages (`games/shikaku/index.html`, `games/flux-wall/index.html`): verify header remains perfectly stable.

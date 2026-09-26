@@ -50,102 +50,113 @@ document.addEventListener('DOMContentLoaded', function () {
         element.addEventListener('click', createMorphingEffect);
     });
 
-    // 4. Morphing Navigation on Scroll
+    // 4. Header Navigation on Scroll & Threshold Particle Effect
     var header = document.querySelector('header');
-    var lastScrollTop = 0;
-    var scrollThreshold = 100;
-    var ticking = false;
+    if (header) {
+        var scrollThreshold = 80;
+        var wasScrolled = (window.pageYOffset || document.documentElement.scrollTop) > scrollThreshold;
+        var particleTimer = null;
+        var particleContainer = null;
 
-    function updateNavigation(scrollPos) {
-        if (window.innerWidth > 768) {
-            if (scrollPos > scrollThreshold) {
-                // Scrolled down - add morphing-down, keep initial for shape
-                header.classList.add('morphing-down');
-                header.classList.remove('morphing-up');
-                header.classList.add('visible');
-                // Keep initial class to maintain semicircle shape
-                // header.classList.remove('initial'); // REMOVE THIS LINE
-                // Create star particles at top of header
-                createStarParticles(header, 'down', scrollPos);
-                // Remove morphing class after animation to preserve initial styling
-                setTimeout(function() {
-                    header.classList.remove('morphing-down');
-                }, 600); // Match animation duration
-            } else {
-                // Scrolled up - add morphing-up, keep initial for shape
-                header.classList.add('morphing-up');
-                header.classList.remove('morphing-down');
-                header.classList.add('visible');
-                // Keep initial class to maintain semicircle shape
-                // header.classList.remove('initial'); // REMOVE THIS LINE
-                // Create star particles at top of header
-                createStarParticles(header, 'up', scrollPos);
-                // Remove morphing class after animation to preserve initial styling
-                setTimeout(function() {
-                    header.classList.remove('morphing-up');
-                }, 600); // Match animation duration
-            }
-        } else {
-            // Mobile: always visible
-            header.classList.add('visible');
-            header.classList.add('initial');
-            header.classList.remove('morphing-up');
-            header.classList.remove('morphing-down');
+        // Sync initial state on page load
+        if (wasScrolled) {
+            header.classList.add('is-scrolled');
         }
-        ticking = false;
-    }
 
-    function createStarParticles(element, direction, scrollPos) {
-        // Remove any existing particles first
-        var existingParticles = element.querySelectorAll('.star-particle');
-        existingParticles.forEach(function(particle) {
-            particle.remove();
-        });
-
-        // Create 5-10 star particles based on scroll position
-        var particleCount = Math.floor((scrollPos % 100) / 10) + 5;
-
-        for (var i = 0; i < particleCount; i++) {
-            var particle = document.createElement('div');
-            particle.className = 'star-particle';
-
-            // Random position at top of header
-            var particleX = Math.random() * element.offsetWidth;
-            particle.style.left = particleX + 'px';
-
-            // Random size and animation
-            var size = Math.random() * 3 + 2; // 2-5px
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-
-            // Set animation based on direction
-            if (direction === 'down') {
-                particle.style.animation = 'starBurstDown ' + (Math.random() * 0.5 + 0.5) + 's ease-out';
-            } else {
-                particle.style.animation = 'starBurstUp ' + (Math.random() * 0.5 + 0.5) + 's ease-out';
+        function triggerThresholdEffect(direction) {
+            // Respect reduced-motion preferences
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
             }
 
-            element.appendChild(particle);
+            // Skip particle effects on mobile viewports
+            if (window.innerWidth <= 768) {
+                return;
+            }
 
-            // Remove particle after animation
-            setTimeout(function() {
-                if (particle.parentNode) {
-                    particle.remove();
+            // Ensure particle container exists
+            if (!particleContainer || !particleContainer.parentNode) {
+                particleContainer = header.querySelector('.header-particles');
+                if (!particleContainer) {
+                    particleContainer = document.createElement('div');
+                    particleContainer.className = 'header-particles';
+                    particleContainer.setAttribute('aria-hidden', 'true');
+                    header.appendChild(particleContainer);
                 }
+            }
+
+            // Cancel any pending cleanup timer and clear stale particles
+            if (particleTimer) {
+                clearTimeout(particleTimer);
+                particleTimer = null;
+            }
+            particleContainer.innerHTML = '';
+
+            var headerWidth = header.offsetWidth;
+            if (headerWidth <= 0) return;
+
+            var fragment = document.createDocumentFragment();
+            var count = 8;
+
+            for (var i = 0; i < count; i++) {
+                var particle = document.createElement('div');
+                particle.className = 'star-particle';
+
+                // Distribute across the width with organic variance
+                var x = (i / (count - 1)) * (headerWidth - 60) + 30 + (Math.random() * 24 - 12);
+                var size = Math.random() * 3 + 3; // 3-6px
+                var duration = (Math.random() * 0.3 + 0.55).toFixed(2); // 0.55-0.85s
+                var delay = (Math.random() * 0.12).toFixed(2); // 0-0.12s
+
+                particle.style.left = Math.max(10, Math.min(headerWidth - 10, x)) + 'px';
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+
+                var animName = direction === 'down' ? 'starBurstDown' : 'starBurstUp';
+                particle.style.animation = animName + ' ' + duration + 's ease-out ' + delay + 's both';
+
+                fragment.appendChild(particle);
+            }
+
+            particleContainer.appendChild(fragment);
+
+            // Clean up particles after burst animation concludes
+            particleTimer = setTimeout(function () {
+                if (particleContainer) {
+                    particleContainer.innerHTML = '';
+                }
+                particleTimer = null;
             }, 1000);
         }
-    }
 
-    window.addEventListener('scroll', function() {
-        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var ticking = false;
+        function updateNavigation(scrollPos) {
+            var isScrolled = scrollPos > scrollThreshold;
 
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                updateNavigation(lastScrollTop);
-            });
-            ticking = true;
+            if (isScrolled !== wasScrolled) {
+                wasScrolled = isScrolled;
+                if (isScrolled) {
+                    header.classList.add('is-scrolled');
+                    triggerThresholdEffect('down');
+                } else {
+                    header.classList.remove('is-scrolled');
+                    triggerThresholdEffect('up');
+                }
+            }
+            ticking = false;
         }
-    });
+
+        window.addEventListener('scroll', function () {
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    updateNavigation(scrollPos);
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 
     // 5. Scroll Reveal Animation using Intersection Observer
     var revealElements = document.querySelectorAll('.reveal-on-scroll');
