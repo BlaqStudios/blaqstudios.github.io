@@ -65,18 +65,33 @@
             'If you\'re previewing this page as a local file, ensure data/shikaku-versions.js is included.</p>';
     }
 
+    function fetchCandidate(paths, index, cacheBust) {
+        if (index >= paths.length) {
+            return Promise.reject(new Error('All changelog candidate paths failed'));
+        }
+        var url = paths[index] + (cacheBust ? '?t=' + Date.now() : '');
+        return fetch(url).then(function (res) {
+            if (!res.ok) throw new Error('Failed to fetch version data: ' + res.status);
+            return res.json();
+        }).catch(function () {
+            return fetchCandidate(paths, index + 1, cacheBust);
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         var container = document.getElementById('changelog-list');
         if (!container) return;
 
-        // When hosted on the website (http: or https:), ALWAYS fetch data/shikaku-versions.json
+        var candidatePaths = [
+            '../../data/shikaku-versions.json',
+            '../data/shikaku-versions.json',
+            '/data/shikaku-versions.json'
+        ];
+
+        // When hosted on the website (http: or https:), fetch data/shikaku-versions.json
         // with cache-busting timestamp so newly pushed changes appear immediately without code changes.
         if (location.protocol === 'http:' || location.protocol === 'https:') {
-            fetch('../data/shikaku-versions.json?t=' + Date.now())
-                .then(function (res) {
-                    if (!res.ok) throw new Error('Failed to fetch version data: ' + res.status);
-                    return res.json();
-                })
+            fetchCandidate(candidatePaths, 0, true)
                 .then(render)
                 .catch(function () {
                     if (typeof window !== 'undefined' && window.SHIKAKU_VERSIONS_DATA) {
@@ -95,11 +110,7 @@
             return;
         }
 
-        fetch('../data/shikaku-versions.json')
-            .then(function (res) {
-                if (!res.ok) throw new Error('Failed to fetch version data');
-                return res.json();
-            })
+        fetchCandidate(candidatePaths, 0, false)
             .then(render)
             .catch(showError);
     });
