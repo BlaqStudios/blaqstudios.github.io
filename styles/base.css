@@ -5,6 +5,8 @@
    ========================================================================== */
 
 :root {
+    color-scheme: dark;
+
     /* Dark Cozy Color Palette */
     --bg-primary: #1a1625;
     --bg-surface: #25212f;
@@ -51,32 +53,6 @@
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     --sans: var(--font-body);
-}
-
-/* Light Mode (Adaptive) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-primary: #faf8ff;
-        --bg-surface: #f0ecf7;
-        --bg-surface-elevated: #e8e1f5;
-        --border-subtle: rgba(155, 77, 219, 0.15);
-        --border-highlight: rgba(155, 77, 219, 0.25);
-
-        --accent-primary: #9b4ddb;
-        --accent-secondary: #ff8c1a;
-        --accent-tertiary: #2ecc71;
-        --accent-pink: #e74c8c;
-        --accent-blue: #9b4ddb;
-        --accent-amber: #ff8c1a;
-
-        --text-primary: #2d2438;
-        --text-secondary: #5a4d6b;
-        --text-muted: #8a7f99;
-
-        --border-soft: rgba(155, 77, 219, 0.2);
-        --shadow-glow: 0 8px 32px rgba(155, 77, 219, 0.15);
-        --shadow-float: 0 12px 48px rgba(0, 0, 0, 0.1);
-    }
 }
 
 * {
