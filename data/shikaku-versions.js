@@ -1,4 +1,4 @@
-// Blaq Studios — Shikaku Version Data
+// BlaqBit Games — Shikaku Version Data
 // Loaded directly by shikaku-changelog.html to allow zero-CORS offline file:// and http:// viewing.
 
 window.SHIKAKU_VERSIONS_DATA = {

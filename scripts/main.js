@@ -1,4 +1,4 @@
-// Blaq Studios — Enhanced interactive script with ripple effects, scroll animations, and floating nav
+// BlaqBit Games — Enhanced interactive script with ripple effects, scroll animations, and floating nav
 
 document.addEventListener('DOMContentLoaded', function () {
     // 1. Current Year in Footer

@@ -1,4 +1,4 @@
-# Blaq Studios — Official Website
+# BlaqBit Games — Official Website
 
 > **Live Website:** [https://blaqstudios.github.io](https://blaqstudios.github.io)  
 > **Studio Focus:** Independent game development crafting focused, distraction-free spatial logic puzzles and reflex arcade experiences for Web and Mobile.
@@ -142,5 +142,5 @@ window.SHIKAKU_VERSIONS_DATA = [
 ## 📬 Contact & Support
 
 - **Email**: [aaljinantony@gmail.com](mailto:aaljinantony@gmail.com)
-- **Publisher**: Blaq Studios
+- **Publisher**: BlaqBit Games
 - **GitHub**: [https://github.com/blaqstudios/blaqstudios.github.io](https://github.com/blaqstudios/blaqstudios.github.io)

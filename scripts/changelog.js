@@ -1,4 +1,4 @@
-// Blaq Studios — changelog loader
+// BlaqBit Games — changelog loader
 // Reads window.SHIKAKU_VERSIONS_DATA or fetches data/shikaku-versions.json and renders it into #changelog-list.
 
 (function () {
