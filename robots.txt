@@ -1,0 +1,17 @@
+﻿User-agent: *
+Allow: /
+
+# AI Search Engine Crawlers (GEO - Allow for citations & summaries)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://blaqstudios.github.io/sitemap.xml

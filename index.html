@@ -1,24 +1,71 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BlaqBit Games is an independent game developer crafting focused, distraction-free spatial logic puzzles for Web and Mobile, starting with Shikaku.">
     <title>BlaqBit Games | Indie Game Developer</title>
+    <link rel="canonical" href="https://blaqstudios.github.io/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c77dff' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
-    <!-- OpenGraph / Twitter Meta -->
+    
+    <!-- OpenGraph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BlaqBit Games">
     <meta property="og:title" content="BlaqBit Games | Indie Game Developer">
     <meta property="og:description" content="Independent studio building small, thoughtful games for Web and Android. Play Shikaku free today.">
     <meta property="og:url" content="https://blaqstudios.github.io/">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://blaqstudios.github.io/images/og/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="BlaqBit Games — Small games. Built with care.">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BlaqBit Games | Small games. Built with care.">
-    <meta name="twitter:description" content="Crafted spatial logic puzzles for Web and Android.">
+    <meta name="twitter:description" content="Crafted spatial logic puzzles for Web and Android. Play Shikaku free today.">
+    <meta name="twitter:image" content="https://blaqstudios.github.io/images/og/og-home.jpg">
+    
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/home.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://blaqstudios.github.io/#organization",
+          "name": "BlaqBit Games",
+          "url": "https://blaqstudios.github.io/",
+          "logo": "https://blaqstudios.github.io/images/og/og-home.jpg",
+          "description": "Independent studio building small, thoughtful games for Web and Android.",
+          "foundingDate": "2024",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "aaljinantony@gmail.com",
+            "contactType": "customer support"
+          },
+          "sameAs": [
+            "https://blaqstudios.itch.io/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://blaqstudios.github.io/#website",
+          "url": "https://blaqstudios.github.io/",
+          "name": "BlaqBit Games",
+          "description": "Small games. Built with care.",
+          "publisher": {
+            "@id": "https://blaqstudios.github.io/#organization"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -26,7 +73,7 @@
 
     <header class="initial">
         <div class="wrapper">
-            <div class="nav-inner">
+            <nav class="nav-inner" aria-label="Main navigation">
                 <a href="index.html" class="brand">
                     <div class="brand-logo">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c77dff" stroke-width="2">
@@ -44,7 +91,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta ripple-container">Support</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
 
@@ -71,7 +118,7 @@
                             <span class="status-dot live"></span>
                             <span style="color: var(--accent-secondary);">Available now on Web &amp; Google Play</span>
                         </div>
-                        <h2>Shikaku — Divide by Box</h2>
+                        <h2>Shikaku &mdash; Divide by Box</h2>
                         <p>A classic spatial logic challenge reinvented with 2,000 handcrafted levels, clean rectangular and organic polyomino partitioning, 3 visual themes, and instant browser play.</p>
 
                         <div class="feature-pills">
@@ -105,24 +152,24 @@
                             </div>
                             <div class="puzzle-matrix">
                                 <div class="cell boxed-amber" style="--i:0">4</div>
-                                <div class="cell boxed-amber" style="--i:1">·</div>
-                                <div class="cell" style="--i:2">·</div>
+                                <div class="cell boxed-amber" style="--i:1"></div>
+                                <div class="cell" style="--i:2"></div>
                                 <div class="cell" style="--i:3">2</div>
 
-                                <div class="cell boxed-amber" style="--i:4">·</div>
-                                <div class="cell boxed-amber" style="--i:5">·</div>
-                                <div class="cell" style="--i:6">·</div>
+                                <div class="cell boxed-amber" style="--i:4"></div>
+                                <div class="cell boxed-amber" style="--i:5"></div>
+                                <div class="cell" style="--i:6"></div>
                                 <div class="cell" style="--i:7">2</div>
 
                                 <div class="cell boxed-blue" style="--i:8">3</div>
-                                <div class="cell boxed-blue" style="--i:9">·</div>
-                                <div class="cell boxed-blue" style="--i:10">·</div>
-                                <div class="cell" style="--i:11">·</div>
+                                <div class="cell boxed-blue" style="--i:9"></div>
+                                <div class="cell boxed-blue" style="--i:10"></div>
+                                <div class="cell" style="--i:11"></div>
 
-                                <div class="cell" style="--i:12">·</div>
-                                <div class="cell" style="--i:13">·</div>
+                                <div class="cell" style="--i:12"></div>
+                                <div class="cell" style="--i:13"></div>
                                 <div class="cell" style="--i:14">1</div>
-                                <div class="cell" style="--i:15">·</div>
+                                <div class="cell" style="--i:15"></div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +182,7 @@
                             <span style="color: var(--accent-primary);">In development</span>
                         </div>
                         <h2>Flux Wall</h2>
-                        <p>One thumb. One tap. Endless reflex action where every 25 points reality shifts — flip gravity, invert controls, and master the flux.</p>
+                        <p>One thumb. One tap. Endless reflex action where every 25 points reality shifts &mdash; flip gravity, invert controls, and master the flux.</p>
 
                         <div class="feature-pills">
                             <span class="pill">9 Rotating Themes</span>
@@ -168,21 +215,21 @@
                             </div>
                             <div class="puzzle-matrix">
                                 <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell boxed-blue" style="--i:0">←</div>
+                                <div class="cell boxed-blue" style="--i:0">&rarr;</div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell boxed-amber" style="--i:1">●</div>
+                                <div class="cell boxed-amber" style="--i:1">&larr;</div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell boxed-blue" style="--i:2">→</div>
-                                <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell boxed-amber" style="--i:3">←</div>
+                                <div class="cell boxed-blue" style="--i:2">&rarr;</div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
-                                <div class="cell boxed-blue" style="--i:4">→</div>
+                                <div class="cell boxed-amber" style="--i:3">&larr;</div>
+                                <div class="cell" style="background: transparent; border: none;"></div>
+                                <div class="cell" style="background: transparent; border: none;"></div>
+                                <div class="cell" style="background: transparent; border: none;"></div>
+                                <div class="cell boxed-blue" style="--i:4">&rarr;</div>
                                 <div class="cell" style="background: transparent; border: none;"></div>
                             </div>
                         </div>
@@ -230,8 +277,8 @@
                     <div>
                         <h5>GAMES</h5>
                         <ul>
-                            <li><a href="games/shikaku/">Shikaku — Divide by Box</a></li>
-                            <li><a href="games/flux-wall/">Flux Wall — Endless Arcade Action</a></li>
+                            <li><a href="games/shikaku/">Shikaku &mdash; Divide by Box</a></li>
+                            <li><a href="games/flux-wall/">Flux Wall &mdash; Endless Arcade Action</a></li>
                         </ul>
                     </div>
 

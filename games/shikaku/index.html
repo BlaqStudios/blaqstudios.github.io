@@ -4,27 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Shikaku — Divide by Box: a spatial logic puzzle for Web and Android with 2,000 levels, Classic & Weird modes, 3 visual themes, and 19 languages. Play free in browser.">
-    <title>Shikaku — Divide by Box | BlaqBit Games</title>
+    <link rel="canonical" href="https://blaqstudios.github.io/games/shikaku/">
+    <title>Shikaku &mdash; Divide by Box | BlaqBit Games</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c77dff' stroke-width='2'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E">
-    <!-- OpenGraph / Social Meta -->
+    <!-- OpenGraph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Shikaku — Divide by Box | BlaqBit Games">
+    <meta property="og:site_name" content="BlaqBit Games">
+    <meta property="og:title" content="Shikaku &mdash; Divide by Box | BlaqBit Games">
     <meta property="og:description" content="A spatial logic puzzle with 2,000 levels, Classic & Weird polyomino modes, 3 crafted themes, and instant web play.">
     <meta property="og:url" content="https://blaqstudios.github.io/games/shikaku/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Shikaku — Divide by Box">
+    <meta property="og:image" content="https://blaqstudios.github.io/images/og/og-shikaku.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Shikaku — Divide by Box by BlaqBit Games">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shikaku &mdash; Divide by Box">
     <meta name="twitter:description" content="Spatial logic challenge with 2,000 handcrafted levels. Play free in browser or on Android.">
-    <link rel="stylesheet" href="../../styles/base.css">
+    <meta name="twitter:image" content="https://blaqstudios.github.io/images/og/og-shikaku.jpg"><link rel="stylesheet" href="../../styles/base.css">
     <link rel="stylesheet" href="../../styles/shikaku.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://blaqstudios.github.io/games/shikaku/#game",
+      "name": "Shikaku \u2014 Divide by Box",
+      "description": "A spatial logic puzzle where every number tells you exactly how big its box should be. Features 2,000 handcrafted levels, Classic & Weird polyomino modes, and offline play.",
+      "url": "https://blaqstudios.github.io/games/shikaku/",
+      "image": "https://blaqstudios.github.io/images/og/og-shikaku.jpg",
+      "genre": [
+        "Puzzle",
+        "Logic",
+        "Spatial Reasoning"
+      ],
+      "gamePlatform": [
+        "Web Browser",
+        "Android"
+      ],
+      "applicationCategory": "Game",
+      "operatingSystem": "Android 5.0+, Modern Web Browsers",
+      "inLanguage": [
+        "en",
+        "ja",
+        "ko",
+        "zh",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ru"
+      ],
+      "numberOfPlayers": {
+        "@type": "QuantitativeValue",
+        "value": 1
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BlaqBit Games",
+        "url": "https://blaqstudios.github.io/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://blaqstudios.github.io/games/shikaku/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://blaqstudios.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Games",
+          "item": "https://blaqstudios.github.io/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Shikaku",
+          "item": "https://blaqstudios.github.io/games/shikaku/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
     <header class="initial">
         <div class="wrapper">
-            <div class="nav-inner">
+            <nav class="nav-inner" aria-label="Main navigation">
                 <a href="../../index.html" class="brand">
                     <div class="brand-logo">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c77dff" stroke-width="2">
@@ -38,15 +125,23 @@
                 </a>
                 <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
                 <ul class="nav-links">
-                    <li><a href="../../index.html#games" class="active">Games</a></li>
+                    <li><a href="../../index.html#game's" class="active">Games</a></li>
                     <li><a href="../../index.html#about">About</a></li>
                     <li><a href="mailto:aaljinantony@gmail.com" class="nav-cta ripple-container">Support</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
 
     <main class="wrapper">
+        <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#games">Games</a></li>
+                <li aria-current="page">Shikaku</li>
+            </ol>
+        </nav>
+
 
         <section class="hero game-hero hero-animate">
             <div class="badge float-element">
@@ -54,7 +149,7 @@
                 <span>Playable on Web &amp; Android · Free &amp; Offline</span>
             </div>
             <h1>Shikaku — Divide by Box</h1>
-            <p>A spatial logic puzzle where every number tells you exactly how big its box should be. Fill the grid completely, master rectangular and freeform polyomino rooms, and enjoy 2,000 handcrafted challenges.</p>
+            <p>A spatial logic puzzle where every number tells you exactly how big it's box should be. Fill the grid completely, master rectangular and freeform polyomino rooms, and enjoy 2,000 handcrafted challenges.</p>
 
             <div class="cta-actions" style="margin-bottom: 24px;">
                 <a href="https://blaqstudios.itch.io/shikaku-divide-by-box" target="_blank" rel="noopener noreferrer" class="btn-itch ripple-container">
@@ -69,7 +164,7 @@
                     </svg>
                     Get on Google Play
                 </a>
-                <a href="../../index.html#games" class="btn-secondary">← All games</a>
+                <a href="../../index.html#game's" class="btn-secondary">← All game's</a>
             </div>
 
             <div class="stat-strip">
@@ -93,7 +188,7 @@
             <div class="split-section">
                 <div class="copy">
                     <h3>How to Play</h3>
-                    <p>Every puzzle starts the same way: a grid dotted with numbers. Draw a shape around each number so its area matches that number exactly — no more, no less. Do that for every clue, cover every single cell, and the puzzle is solved.</p>
+                    <p>Every puzzle starts the same way: a grid dotted with numbers. Draw a shape around each number so it's area matches that number exactly — no more, no less. Do that for every clue, cover every single cell, and the puzzle is solved.</p>
                     <ul class="rule-list">
                         <li><span class="num">01</span> <strong>One shape, one number:</strong> never two clues, never zero.</li>
                         <li><span class="num">02</span> <strong>Exact area equality:</strong> total cells must match the number precisely.</li>
@@ -145,7 +240,7 @@
             <div class="split-section">
                 <div class="copy">
                     <h3>How to Play</h3>
-                    <p>Every puzzle starts the same way: a grid dotted with numbers. Draw a shape around each number so its area matches that number exactly — no more, no less. Do that for every clue, cover every single cell, and the puzzle is solved.</p>
+                    <p>Every puzzle starts the same way: a grid dotted with numbers. Draw a shape around each number so it's area matches that number exactly — no more, no less. Do that for every clue, cover every single cell, and the puzzle is solved.</p>
                     <ul class="rule-list">
                         <li><span class="num">01</span> <strong>One shape, one number:</strong> never two clues, never zero.</li>
                         <li><span class="num">02</span> <strong>Exact area equality:</strong> total cells must match the number precisely.</li>
@@ -416,7 +511,7 @@
                     <div class="brand">
                         <span class="brand-name">BlaqBit Games</span>
                     </div>
-                    <p>Independent studio building small, thoughtful games.</p>
+                    <p>Independent studio building small, thoughtful game's.</p>
                 </div>
 
                 <div class="footer-links-group">
